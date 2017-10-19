@@ -25,7 +25,7 @@ public class DAOConteudo {
         sessao.remove(conteudo);
     }
     
-    public Conteudo buscar (Class c, int id){
+    public Conteudo buscar (Class c, Long id){
     return sessao.find(Conteudo.class, id);
     }
     

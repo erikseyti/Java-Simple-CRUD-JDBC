@@ -1,10 +1,8 @@
 package sessao;
 
 import dao.DAOCurso;
-import dao.DAONivel;
 import dao.DAOTurma;
 import entidade.Curso;
-import entidade.Nivel;
 import entidade.Turma;
 
 public class SessaoTurma {
@@ -20,12 +18,12 @@ public class SessaoTurma {
         daoTurma.setSessao(sessao.get());
         daoCurso.setSessao(sessao.get());
         
-        turma.setAno(2017);
-        turma.setCurso(curso);               
+        turma.setAno(2015);
         
         try {
             sessao.iniciarTransacao();
             curso = daoCurso.buscar(Curso.class, 1L);
+            turma.setCurso(curso);               
                     
             daoTurma.salvar(turma);
             sessao.confirmaTransacao();

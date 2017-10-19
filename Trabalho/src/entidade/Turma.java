@@ -19,7 +19,7 @@ public class Turma implements Serializable{
     private Integer ano;
         
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="idcurso")
+    @JoinColumn(name="idCurso")
     private Curso curso;
 
     public Long getIdTurma() {

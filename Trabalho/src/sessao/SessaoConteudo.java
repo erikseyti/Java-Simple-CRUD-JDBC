@@ -21,12 +21,12 @@ public class SessaoConteudo {
         
         conteudo.setDataPostagem("05/10/2017");
         conteudo.setImagem("c:/imagem.jpg");
-        conteudo.setTexto("Bom dia queridos alunos!!!");
+        conteudo.setTexto("Boa noite a todos e bom seminário!!!");
         conteudo.setTipo("Recado");   
         
         try {
             sessao.iniciarTransacao();
-            userServidor = daoUsuario.buscar(UsuarioServidor.class, 1L);     
+            userServidor = daoUsuario.buscar(UsuarioServidor.class, 2L);     
                 
             conteudo.setUsuarioServidor(userServidor);
             daoConteudo.salvar(conteudo);

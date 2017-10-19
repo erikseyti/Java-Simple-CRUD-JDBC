@@ -20,11 +20,12 @@ public class SessaoCurso {
         
         curso.setNomeCurso("TADS");
         curso.setPeriodo("3 anos");
-        curso.setNivel(nivel);
+        
                 
         try {
             sessao.iniciarTransacao();    
             nivel = daoNivel.buscar(Nivel.class,1L);
+            curso.setNivel(nivel);
             
             dao.salvar(curso);
             sessao.confirmaTransacao();

@@ -1,12 +1,15 @@
 package entidade;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED) // declarando que é Herança e o tipo de herança
@@ -23,6 +26,10 @@ public abstract class Usuario implements Serializable {
     private String email;   
     private String perfil;
     private String status;
+    
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="idCurso")
+    private Curso curso;
     
     public Usuario() {
     }
@@ -85,5 +92,13 @@ public abstract class Usuario implements Serializable {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
     }
 }

@@ -25,7 +25,7 @@ public class DAOUsuarioAluno {
         sessao.remove(usuarioAluno);
     }
     
-    public UsuarioAluno buscar (Class c, int id){
+    public UsuarioAluno buscar (Class c, Long id){
     return sessao.find(UsuarioAluno.class, id);
     }
     

@@ -25,7 +25,7 @@ public class DAOTurma {
         sessao.remove(turma);
     }
     
-    public Turma buscar (Class c, int id){
+    public Turma buscar (Class c, Long id){
     return sessao.find(Turma.class, id);
     }
     
